@@ -16,7 +16,7 @@ export const galleryData = [
     {
           name: "Cisco Visit",
           desc: "We met with the Cisco team for a project discussion and collaboration. At Radison Blue Hotel",
-          fullDesc: "CISCO donates Video Conferencing its to GoSL, Statehouse, Freetown, Sierra Leone, 11th May, 2020. The Honourable Chief Minister, Professor David John Franncis has received 4 Video conferencing kits from CISCO as a donation to the Government of Sierra Leone. The donation was made possible through the efforts of Yoz Services Limited, the local partner for CISCO in Sierra Leone. The Honourable Chief Minister thanked CISCO and Yoz Services Limited for the kind gesture and assured them that the equipment will be put to good use by the Government of Sierra Leone.",
+          fullDesc: "CISCO donates Video Conferencing its to GoSL, Statehouse, Freetown, Sierra Leone, 11th May, 2020. The Honourable Chief Minister, Professor David John Franncis has received 4 Video conferencing kits from CISCO as a donation to the Government of Sierra Leone. The donation was made possible through the efforts of Yoz Services Limited, the local partner for CISCO in Sierra Leone. The Honourable Chief Minister thanked CISCO and Yoz Services Limited for the kind gesture and assured them that the equipment will be put to good use by the Government of Sierra Leone. The CEO of YOZ Services, Mr. Charles Kamara said the donation was in line with the organization's corporate social responsibility  The Hounourable Chief Minister thanked the CISCO  membership for joining the government fighting the Corona virus pandemic in Sierra Leone. He said the Vudei Conferencing Kits will help promote the President's vision for e-governance. He added that, the Giverbnebt was pleased when the head of the Directorate of Science Technology and Innovation authenticated the credibility of kits and that it will ease communication among Government officials. The Chief Minister thanked the Leader of Government Business in the House of Paliament, Hon. Matthew Nyuma for facilitating the donation to reach Governemtn. The Minster of Basic and Senior Secondary Education cum Chief Innovation Officer Dr. Moinina Sengeh said CISCO's donation was in line with DSTI's dream of making Sierra Leone a digitalized nation under the leadership of His Excellency, Retired Brigadier Julius Maada Bio. He said the video conferncing kits will make the work of Government officials much effective and efficient.",
           img: "/src/assets/cisco_meet_up.jpg",
           id: 3,
     },
@@ -26,5 +26,33 @@ export const galleryData = [
           fullDesc: "A productive meet-up with the England High Commission team for a project discussion and collaboration. Yoz Services Limited is committed to delivering top-notch IT solutions and services to our clients. We are proud to partner with the England High Commission to support their mission of promoting democracy, human rights, and sustainable development around the world.",
           img: "/src/assets/Yoz_Football_Player.jpg",
           id: 4,
-    }
+    },
+    {
+          name: "England High Commission Visit",
+          desc: "We met with the England High Commission team for a project discussion and collaboration. At England with their footbal player",
+          fullDesc: "A productive meet-up with the England High Commission team for a project discussion and collaboration. Yoz Services Limited is committed to delivering top-notch IT solutions and services to our clients. We are proud to partner with the England High Commission to support their mission of promoting democracy, human rights, and sustainable development around the world.",
+          img: "/src/assets/Yoz_Football_Player.jpg",
+          id: 5,
+    },
+    {
+          name: "England High Commission Visit",
+          desc: "We met with the England High Commission team for a project discussion and collaboration. At England with their footbal player",
+          fullDesc: "A productive meet-up with the England High Commission team for a project discussion and collaboration. Yoz Services Limited is committed to delivering top-notch IT solutions and services to our clients. We are proud to partner with the England High Commission to support their mission of promoting democracy, human rights, and sustainable development around the world.",
+          img: "/src/assets/Yoz_Football_Player.jpg",
+          id: 6,
+    },
+    {
+          name: "England High Commission Visit",
+          desc: "We met with the England High Commission team for a project discussion and collaboration. At England with their footbal player",
+          fullDesc: "A productive meet-up with the England High Commission team for a project discussion and collaboration. Yoz Services Limited is committed to delivering top-notch IT solutions and services to our clients. We are proud to partner with the England High Commission to support their mission of promoting democracy, human rights, and sustainable development around the world.",
+          img: "/src/assets/Yoz_Football_Player.jpg",
+          id: 7,
+    },
+    {
+          name: "England High Commission Visit",
+          desc: "We met with the England High Commission team for a project discussion and collaboration. At England with their footbal player",
+          fullDesc: "A productive meet-up with the England High Commission team for a project discussion and collaboration. Yoz Services Limited is committed to delivering top-notch IT solutions and services to our clients. We are proud to partner with the England High Commission to support their mission of promoting democracy, human rights, and sustainable development around the world.",
+          img: "/src/assets/Yoz_Football_Player.jpg",
+          id: 8,
+    },
 ];

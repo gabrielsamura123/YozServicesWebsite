@@ -1,11 +1,15 @@
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gallery_styles from './Yoz_Gallery_Component.module.css';
 import { galleryData } from './galleryData';
 
 export default function Yoz_Gallery_Component() {
+          const [currentPage, setCurrentPage] = useState(1);
+          const itemsPerPage = 6;
+          const totalPages = Math.ceil(galleryData.length / itemsPerPage);
+
           useEffect(() => {
                     Aos.init({
                               duration: 1000,
@@ -13,11 +17,17 @@ export default function Yoz_Gallery_Component() {
                     });
           }, []);
 
+          const indexOfLastItem = currentPage * itemsPerPage;
+          const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+          const currentItems = galleryData.slice(indexOfFirstItem, indexOfLastItem);
+
+          const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
           return (
                     <div className={gallery_styles.galleryMain} data-aos="fade-up">
                               <h1 className={gallery_styles.galleryHeading}>Our Gallery</h1>
                               <div className={gallery_styles.galleriesContainer}>
-                                        {galleryData.map((data) => (
+                                        {currentItems.map((data) => (
                                                   <Link to={`/gallery/${data.id}`} state={{ item: data }} key={data.id} className={gallery_styles.galleryCard}>
                                                             <img src={data.img} alt={data.name} className={gallery_styles.galleryImage} />
                                                             <div className={gallery_styles.galleryOverlay}>
@@ -27,6 +37,22 @@ export default function Yoz_Gallery_Component() {
                                                   </Link>
                                         ))}
                               </div>
+                              {totalPages > 1 && (
+                                        <nav className={gallery_styles.pagination}>
+                                                  <ul>
+                                                            {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
+                                                                      <li key={number} className={gallery_styles.pageItem}>
+                                                                                <button
+                                                                                          onClick={() => paginate(number)}
+                                                                                          className={`${gallery_styles.pageLink} ${currentPage === number ? gallery_styles.activePage : ''}`}
+                                                                                >
+                                                                                          {number}
+                                                                                </button>
+                                                                      </li>
+                                                            ))}
+                                                  </ul>
+                                        </nav>
+                              )}
                     </div>
           );
 }

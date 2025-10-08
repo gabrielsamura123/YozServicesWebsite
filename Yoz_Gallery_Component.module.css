@@ -103,4 +103,48 @@
 .galleryDesc {
           font-size: 0.9rem;
           line-height: 1.4;
+          font-style: italic;
+          color: #e0e0e0;
+}
+
+/* Pagination Styles */
+.pagination {
+          margin-top: 40px;
+}
+
+.pagination ul {
+          display: flex;
+          list-style: none;
+          padding: 0;
+          gap: 10px;
+}
+
+.pageItem {
+          display: inline;
+}
+
+.pageLink {
+          display: block;
+          padding: 10px 15px;
+          background-color: #fff;
+          color: #333;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: background-color 0.3s, color 0.3s;
+}
+
+.pageLink:hover {
+          background-color: #f0f0f0;
+}
+
+.activePage {
+          background-color: #0056b3;
+          color: white;
+          border-color: #0056b3;
+}
+
+.activePage:hover {
+          background-color: #004494;
 }
