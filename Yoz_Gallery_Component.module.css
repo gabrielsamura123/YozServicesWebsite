@@ -10,11 +10,13 @@
           box-sizing: border-box;
           overflow-x: hidden;
 }
+
 * {
           transition: .5s ease-in-out;
           margin: 0;
           padding: 0;
 }
+
 .galleryHeading {
           font-size: 2.8rem;
           color: black;
@@ -24,6 +26,7 @@
           text-align: center;
           font-family: Cooper;
 }
+
 .galleriesContainer {
           width: 100%;
           max-width: 1400px;
@@ -33,13 +36,15 @@
 }
 
 .galleryCard {
-          display: block; /* Ensures the Link tag behaves like a block element */
+          display: block;
+          /* Ensures the Link tag behaves like a block element */
           position: relative;
           overflow: hidden;
           border-radius: 12px;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
           cursor: pointer;
-          aspect-ratio: 4 / 3; /* Maintain a consistent aspect ratio */
+          aspect-ratio: 4 / 3;
+          /* Maintain a consistent aspect ratio */
           transition: transform 0.4s ease, box-shadow 0.4s ease;
           border-bottom: 1px solid #000000;
 }
@@ -80,7 +85,8 @@
           opacity: 1;
 }
 
-.galleryCardTitle, .galleryDesc {
+.galleryCardTitle,
+.galleryDesc {
           color: #ffffff;
           text-align: left;
           transform: translateY(20px);
