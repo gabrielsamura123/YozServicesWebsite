@@ -1,0 +1,106 @@
+.galleryMain {
+          width: 100%;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          background-color: #f7f9fa;
+          padding: 40px 20px;
+          box-sizing: border-box;
+          overflow-x: hidden;
+}
+* {
+          transition: .5s ease-in-out;
+          margin: 0;
+          padding: 0;
+}
+.galleryHeading {
+          font-size: 2.8rem;
+          color: black;
+          font-weight: bolder;
+          text-transform: uppercase;
+          margin-bottom: 40px;
+          text-align: center;
+          font-family: Cooper;
+}
+.galleriesContainer {
+          width: 100%;
+          max-width: 1400px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 25px;
+}
+
+.galleryCard {
+          display: block; /* Ensures the Link tag behaves like a block element */
+          position: relative;
+          overflow: hidden;
+          border-radius: 12px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          aspect-ratio: 4 / 3; /* Maintain a consistent aspect ratio */
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+          border-bottom: 1px solid #000000;
+}
+
+.galleryCard:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.galleryImage {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+}
+
+.galleryCard:hover .galleryImage {
+          transform: scale(1.1);
+}
+
+.galleryOverlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding: 20px;
+          box-sizing: border-box;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+}
+
+.galleryCard:hover .galleryOverlay {
+          opacity: 1;
+}
+
+.galleryCardTitle, .galleryDesc {
+          color: #ffffff;
+          text-align: left;
+          transform: translateY(20px);
+          opacity: 0;
+          transition: transform 0.4s ease 0.1s, opacity 0.4s ease 0.1s;
+}
+
+.galleryCard:hover .galleryCardTitle,
+.galleryCard:hover .galleryDesc {
+          transform: translateY(0);
+          opacity: 1;
+}
+
+.galleryCardTitle {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin: 0 0 5px 0;
+}
+
+.galleryDesc {
+          font-size: 0.9rem;
+          line-height: 1.4;
+}
