@@ -37,7 +37,8 @@ export default function Yoz_Gallery_Component() {
                                                   </Link>
                                         ))}
                               </div>
-                              {totalPages > 1 && (
+                              {/* Only show pagination if there are more items than can fit on one page */}
+                              {galleryData.length > itemsPerPage && (
                                         <nav className={gallery_styles.pagination}>
                                                   <ul>
                                                             {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
