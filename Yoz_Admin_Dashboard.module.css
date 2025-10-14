@@ -1,0 +1,224 @@
+@keyframes overlay-fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+}
+
+@keyframes content-scale-up {
+          from { transform: scale(0.9); }
+          to { transform: scale(1); }
+}
+
+* {
+          margin: 0; padding: 0;
+          transition: .5s ease-in-out;
+}
+::-webkit-scrollbar {
+          width: 2px;
+}
+.dashboardMainContainer {
+          width: 100%;
+          height: 100vh;
+          background: linear-gradient(to left, #262626, #752d2d);
+          /* padding: 10px 0px 10px 0px; */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+}
+.dashboardMain {
+          width: 90%;
+          height: 90%;
+          background-color: transparent;
+          box-shadow: 2px 5px 15px rgba(10, 10, 10, 0.5);
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+}
+.dashboardLeft {
+          width: 100%;
+          height: 110%;
+          flex: 0.3;
+          background-color: rgba(255, 255, 255, 0.427);
+          border-radius: 5px;
+          box-shadow: 2px 0px 3px rgba(10, 10, 10, 0.5);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content:center ;
+          padding: 0px 5px 0px 5px;
+          gap: 20px;
+}
+/* .leftHeader {
+          text-align: center;
+          font-weight: bolder;
+          font-family: Cooper;
+          font-size: 25px;
+          color: rgb(0, 0, 0);
+          text-transform: uppercase;margin-top: 5px;
+          text-shadow: 0px 1px 2px rgba(10, 10, 10, 0.2);
+} */
+.dashboardRight {
+          width: 100%;
+          height: 100%;
+          flex: 1;
+          background-color: transparent;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          gap: 1px;
+}
+.userInfo_Display {
+          width: 100%;
+          height: 100%;
+          flex: 0.1;
+          box-shadow: 0px 2px 2px rgba(10, 10, 10, 0.2);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+}
+.dataDisplay {
+          width: 100%;
+          height: 100%;
+          flex: 1;
+          box-shadow: 0px 2px 2x rgba(10, 10, 10, 0.2);
+          border-radius: 5px;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+}
+.navigationContainer {
+          width: 90%;
+          height: 50px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          cursor: pointer;
+          border-radius: 5px;
+          box-shadow: 0px 2px 1px rgba(10, 10, 10, 0.2);
+          &:hover {
+                    transform: translateY(-5px);
+          }
+}
+.navigationContainer.active {
+          background-color: #491212;
+          color: white;
+          font-weight: bold;
+          box-shadow: 0px 3px 8px rgba(10, 10, 10, 0.4);
+          transform: translateY(-2px);
+          /* Ensure text inside also becomes white */
+          & p { color: white; }
+}
+.profileName {
+          font-size: 18px;
+          font-weight: lighter;
+          text-shadow: 0px 1px 2px rgba(10, 10, 10, 0.2);
+          cursor: pointer;
+          text-transform: capitalize;
+          &:hover {
+                    transform: translateY(-5px);
+          }
+}
+.profileEmail {
+          font-weight: lighter;
+          cursor: pointer;
+          text-transform: lowercase;
+          font-size: 14px;
+          text-shadow: 0px 1px 2px rgba(10, 10, 10, 0.2);
+          color: #cccccc;
+          &:hover {
+                    transform: scale(1.05);
+          }
+}
+.profileImage {
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+          cursor: pointer;
+          &:hover {
+                    transform: translateY(-10px);
+          }
+}
+.profileRightData {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+}
+.search_button {
+          width: 30px;
+          height: 30px;
+          border: none;
+          color: white;
+          border-radius: 15px;
+          background-color: transparent;
+          cursor: pointer;
+          font-size: 20px;;
+          box-shadow: 0px 2px 2px rgba(10, 10, 10, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0x 2px 2px rgba(10, 10, 10, 0.7);
+          }
+}
+.searchOverlayContainer {
+          position: fixed;
+          top: 0; left: 0; width: 100%; height: 100%;
+          background-color: rgba(20, 20, 20, 0.7);
+          backdrop-filter: blur(6px);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          z-index: 999;
+          animation: overlay-fade-in 0.3s ease-out forwards;
+}
+.searchOverlayContainer.closing {
+          opacity: 0;
+          transition: opacity 0.3s ease-in;
+}
+.searchOverlayContent {
+          position: relative;
+          width: 90%;
+          max-width: 400px;
+          animation: content-scale-up 0.3s ease-out forwards;
+}
+.searchInput {
+          width: 100%;
+          height: 60px;
+          font-size: 1rem;
+          border: none;
+          border-radius: 8px;
+          outline: none;
+          padding: 0 15px;
+}
+.overlayCloseButton {
+          position: absolute;
+          top: 50%;
+          right: -40px;
+          transform: translateY(-50%);
+          font-size: 1.2rem;
+          background-color: transparent;
+          border: none;
+          color: white;
+          cursor: pointer;
+          &:hover {
+                    transform: translateY(-50%) scale(1.1);
+          }
+}
+.yozLogo {
+          width: 140px;
+          height: 100px;
+          object-fit: contain;
+}

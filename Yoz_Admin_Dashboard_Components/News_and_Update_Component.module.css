@@ -1,0 +1,469 @@
+@keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+}
+@keyframes card-appear {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+}
+@keyframes scaleUp {
+          from { transform: scale(0.95); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+}
+
+.newsAndUpdateMainContainer {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: #ffffff88;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          border-radius: 5px;
+          padding: 2px;
+          box-sizing: border-box;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          animation: card-appear 0.4s ease-out backwards;
+          will-change: transform, box-shadow;
+          &:hover {
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+          }
+}
+.addButtonContainer {
+          width: 100%;
+          height: 100%;
+          flex: 0.1;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          padding-left: 20px;
+          cursor: pointer;
+          background-color: #f8fafc00;
+}
+.addButtonContainer button {
+          width: 150px;
+          height: 40px;
+          border: none;
+          background-color: #ac2121;
+          color: white;
+          font-size: 10px;
+          font-weight: bold;
+          border-radius: 5px;
+          box-shadow: 0px 2px 2px rgba(10, 10, 10, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0px 4px 4px rgba(10, 10, 10, 0.4);
+          }
+}
+
+/* Filter Styles */
+.filterContainer {
+          display: flex;
+          margin-left: 8px;
+          background-color: #e2e8f000;
+          border-radius: 6px;
+          padding: 4px;
+          gap: 8px;
+}
+.filterButton {
+          padding: 6px 16px;
+          border: none;
+          background-color: transparent;
+          color: #475569;
+          font-weight: 600;
+          font-size: 14px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+}
+.filterButton:hover {
+          background-color: #b41616;
+}
+.activeFilter {
+          background-color: #000000;
+          color: #2563eb;
+          box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+          transform: translateY(-2px);
+}
+
+/* Carousel Styles */
+.carouselWrapper {
+          position: relative;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          box-sizing: border-box;
+          flex: 1;
+          overflow: hidden;
+}
+.carouselContainer {
+          display: flex;
+          gap: 20px;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          padding: 20px;
+          box-sizing: border-box;
+          /* Hide scrollbar */
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+}
+.carouselContainer::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Opera */
+}
+
+.carouselNav {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(255, 255, 255, 0.43);
+          border: 1px solid #e2e8f0;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          color: #334155;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          transition: all 0.2s ease;
+}
+.carouselNav:hover {
+          background-color: #fff;
+          color: #1e293b;
+          transform: translateY(-50%) scale(1.1);
+}
+.carouselNav.hidden {
+          opacity: 0;
+          pointer-events: none;
+}
+.prev {
+          left: 20px;
+}
+.next {
+          right: 20px;
+}
+
+/* Modal Styles */
+.modalOverlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(4px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+          animation: fadeIn 0.3s ease-out;
+}
+
+.modalContent {
+          background-color: #f9f9f9;
+          padding: 25px 30px;
+          border-radius: 12px;
+          box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+          width: 90%;
+          max-width: 550px;
+          position: relative;
+          animation: scaleUp 0.3s ease-out;
+}
+
+.modalContent h2 {
+          margin-top: 0;
+          margin-bottom: 20px;
+          color: #1f2937;
+          font-family: 'Cooper', sans-serif;
+}
+
+.closeButton {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          font-size: 1.8rem;
+          color: #9ca3af;
+          background: none;
+          border: none;
+          cursor: pointer;
+          transition: color 0.2s ease;
+          &:hover {
+                    color: #374151;
+          }
+}
+
+.newsForm {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+}
+
+.newsForm label {
+          font-weight: 600;
+          font-size: 0.9rem;
+          color: #4b5563;
+}
+
+.newsForm input[type="text"],
+.newsForm textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          font-size: 1rem;
+          background-color: #fff;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsForm input[type="text"]:focus,
+.newsForm textarea:focus {
+          outline: none;
+          border-color: #2563eb;
+          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.newsForm input[type="file"] {
+          display: none;
+}
+
+.imageUploadLabel {
+          border: 2px dashed #d1d5db;
+          border-radius: 8px;
+          padding: 20px;
+          text-align: center;
+          cursor: pointer;
+          transition: border-color 0.2s ease, background-color 0.2s ease;
+          color: #6b7280;
+          background-color: #f9fafb;
+          height: 150px;
+          display: flex;
+          overflow: hidden;
+          align-items: center;
+          justify-content: center;
+}
+.imageUploadLabel:hover {
+          border-color: #2563eb;
+          background-color: #eff6ff;
+}
+.imagePreview {
+          max-height: 100%;
+          max-width: 100%;
+          object-fit: contain;
+          border-radius: 4px;
+}
+
+.submitButton {
+          padding: 12px 20px;
+          border: none;
+          border-radius: 6px;
+          background-color: #1d4ed8;
+          color: white;
+          font-weight: bold;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+          margin-top: 10px;
+          &:hover {
+                    background-color: #1e40af;
+          }
+          &:disabled {
+                    background-color: #9ca3af;
+                    cursor: not-allowed;
+          }
+}
+
+.statusMessage {
+          text-align: center;
+          font-weight: 500;
+          margin-top: 10px;
+}
+
+/* News Card Styles */
+.newsCard {
+          flex: 0 0 320px; /* Fixed width for carousel items */
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+          display: flex;
+          flex-direction: column;
+          height: 420px; /* Fixed height for all cards */
+          overflow: hidden;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.newsCard:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.newsImage {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+}
+.newsContent {
+          padding: 15px;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+}
+.newsTitle {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #1e293b;
+          margin: 0 0 8px 0;
+}
+.newsDescription {
+          font-size: 0.9rem;
+          color: #475569;
+          line-height: 1.5;
+          flex-grow: 1;
+          margin-bottom: 15px;
+}
+.newsActions {
+          display: flex;
+          gap: 10px;
+          margin-top: auto;
+}
+.newsActions button {
+          flex: 1;
+          padding: 8px 10px;
+          border: 1px solid #d1d5db;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: 500;
+          background-color: #f9fafb;
+          transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.newsActions button:hover {
+          background-color: #f3f4f6;
+          border-color: #9ca3af;
+}
+.deleteButton {
+          color: #ef4444;
+}
+.deleteButton:hover {
+          background-color: #fee2e2;
+          border-color: #fca5a5;
+}
+
+/* Loading Spinner */
+.loadingSpinner {
+          margin: auto; /* Center in the flex container */
+          width: 50px;
+          height: 50px;
+          border: 5px solid #e2e8f0;
+          border-top: 5px solid #2563eb;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+}
+
+
+/* Skeleton Loader Styles */
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+.skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.skeletonImage {
+  height: 180px;
+  background-color: #e2e8f0;
+}
+.skeletonTitle {
+  height: 20px;
+  width: 75%;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.skeletonDescription {
+  height: 16px;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.skeletonDescription:last-child {
+  width: 90%;
+}
+
+/* News Card Styles */
+.newsCard {
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.newsCard:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.newsImage {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+}
+.newsContent {
+          padding: 15px;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+}
+.newsTitle {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #1e293b;
+          margin: 0 0 8px 0;
+}
+.newsDescription {
+          font-size: 0.9rem;
+          color: #475569;
+          line-height: 1.5;
+          flex-grow: 1;
+          margin-bottom: 15px;
+}
+.newsActions {
+          display: flex;
+          gap: 10px;
+          margin-top: auto;
+}
+.newsActions button {
+          flex: 1;
+          padding: 8px 10px;
+          border: 1px solid #d1d5db;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: 500;
+          background-color: #f9fafb;
+          transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.newsActions button:hover {
+          background-color: #f3f4f6;
+          border-color: #9ca3af;
+}
+.deleteButton {
+          color: #ef4444;
+}
+.deleteButton:hover {
+          background-color: #fee2e2;
+          border-color: #fca5a5;
+}
